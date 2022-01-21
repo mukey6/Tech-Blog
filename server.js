@@ -34,3 +34,4 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
+// edit-post handlebars not working ?
