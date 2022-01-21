@@ -1,14 +1,24 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../../models/Association");
+const autherized = require('../../utils/autherize')
+
 
 router.get("/", (req, res) => {
   Post.findAll({
-    attributes: ["id", "title", "post_text", "user_id"],
+    attributes: ["id", "title", "post_text", 'created_at'],
     include: [
       {
         model: User,
         attributes: ["username"],
-      },
+      }, 
+      {
+        model:Comment,
+        attributes:['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include:{
+          model:User,
+          attributes:['username']
+        }
+      }
     ],
   })
     .then((postData) => res.json(postData))
@@ -34,11 +44,11 @@ router.get('/:id', (req,res)=>{
     })
 });
 
-router.post('/', (req,res)=>{
+router.post('/',autherized,(req,res)=>{
     Post.create({
         title:req.body.title,
-        p:req.body.post_text,
-        user_id:req.body.user_id
+        post_text:req.body.post_text,
+        user_id:req.session.user_id
     }).then((postData)=>{
         res.json(postData)
     }).catch((err)=>{
@@ -46,7 +56,7 @@ router.post('/', (req,res)=>{
     })
 })
 
-router.put("/:id", (req, res) => {
+router.put("/:id",autherized, (req, res) => {
     Post.update(
       {
         title: req.body.title,
@@ -70,7 +80,7 @@ router.put("/:id", (req, res) => {
       });
   });
 
-  router.delete("/:id",(req, res) => {
+  router.delete("/:id",autherized,(req, res) => {
     Post.destroy({
       where: {
         id: req.params.id,
