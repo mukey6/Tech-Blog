@@ -1,5 +1,5 @@
-<section>
-  <h2>Create New Blog</h2>
+<section class="new-post">
+  <h2 class="new-post-header">Create New Blog</h2>
 
   <form class="new-post-form">
     <div>
@@ -10,7 +10,6 @@
     <label for="post-text">Blog</label>
     <textarea name="post-text-body"></textarea>
   </div>
-
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
@@ -23,9 +22,11 @@
     <li>
 {{>post-info post}}
     </li>
+         <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/edit-post.js"></script>

@@ -4,6 +4,7 @@ const autherized = require('../../utils/autherize')
 
 
 router.get("/", (req, res) => {
+  console.log(req, 'this is request')
   Post.findAll({
     attributes: ["id", "title", "post_text", 'created_at'],
     include: [
@@ -21,7 +22,10 @@ router.get("/", (req, res) => {
       }
     ],
   })
-    .then((postData) => res.json(postData))
+    .then((postData) => {
+      console.log(postData, '~~~~~~~~~~')
+      res.json(postData)
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -56,10 +60,11 @@ router.post('/',autherized,(req,res)=>{
     })
 })
 
-router.put("/:id",autherized, (req, res) => {
+router.put("/:id", (req, res) => {
     Post.update(
       {
         title: req.body.title,
+        post_text: req.body.post_text
       },
       {
         where: {
@@ -80,7 +85,7 @@ router.put("/:id",autherized, (req, res) => {
       });
   });
 
-  router.delete("/:id",autherized,(req, res) => {
+  router.delete("/:id",(req, res) => {
     Post.destroy({
       where: {
         id: req.params.id,

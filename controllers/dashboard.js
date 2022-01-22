@@ -39,6 +39,7 @@ router.get('/', autherized, (req, res) => {
 
 
 router.get('/edit/:id', autherized,(req, res) => {
+    console.log("~~~~~~~~~~~~~~")
     Post.findByPk(req.params.id, {
       attributes: [
         'id',

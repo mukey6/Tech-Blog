@@ -29,9 +29,10 @@ app.use(session(sess));
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ alter: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
 
 // edit-post handlebars not working ?
+// delete post when user is deleted?

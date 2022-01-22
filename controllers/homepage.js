@@ -8,7 +8,7 @@ const { Post, User, Comment } = require("../models/Association");
 
 router.get("/", (req, res) => {
   Post.findAll({
-    attributes: ["id", "title", "post_text"],
+    attributes: ["id", "title", "post_text", "created_at"],
     include: [
       {
         model: User,
