@@ -2,8 +2,8 @@
 // import User from '../models/User'
 // import Post from '../models/Post'
 
-const User = require('./user');
-const Post = require('./post')
+const User = require('./User');
+const Post = require('./Post')
 const Comment = require('./Comment')
 
 Comment.belongsTo(User, {
