@@ -49,35 +49,15 @@ h1 {
   text-align: center;
   text-decoration: none;
 }
-a{
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin-left: auto;
-  margin-right: 60px;
-  text-decoration: none; */
 
+.title-name{
+  text-decoration: none;
 }
-
 .or-option{
   text-align: center;
   margin-bottom: inherit;
 }
 .login-form, .signup-form{
-  /* font-size: 1.3rem;
-  text-decoration: none;
-  padding: 6px 5px;
-  width: 100%;
-  display: block;
-  margin: 5px 0;
-  border-radius: var(--border-radius);
-  color: var(--primary);
-  border: none;
-  outline: none;
-  box-shadow: 3px 3px var(--dark);
-  transform: translate(-1px, -1px); */
   display: grid;
   justify-content: center;
   text-align: -webkit-right;
@@ -182,12 +162,6 @@ p {
   color: rgb(29, 153, 255);
 }
 
-/* CARDS */
-/* .new-post{
-  margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-} */
 .new-post-header{
   color: var(--primary);
   background-color: var(--dark);
@@ -204,12 +178,6 @@ p {
 .card-body {
   padding: 2.5%;
 }
-
-/* FORM */
-/* .form-label,
-.form-input {
-  display: block;
-} */
 
 .form-label {
   font-size: 1.1rem;
