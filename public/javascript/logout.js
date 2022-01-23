@@ -6,7 +6,6 @@ async function logoutFormHandler(event) {
       });
       if (response.ok) {
           console.log('success')
-          // replace with dashboard later
         document.location.replace('/')
             } else {
         alert(response.statusText);

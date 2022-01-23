@@ -21,18 +21,70 @@ body {
   font-size: 16px;
 }
 textarea {
-  height: 160px;
-  width: 50%;
+  width:635px;
+height:130px;
 }
-
+.new-blog, .old-blog{
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+.create-btn{
+  margin: 1% 40%;
+}
+.delete-post-btn,.save-btn {
+  margin: 10px 0;
+}
+.edit-blog{
+  text-align: center;
+}
+footer{
+  text-align: center;
+}
 h1 {
   font-weight: 700;
   margin: 0;
   color: var(--dark);
   line-height: 1.25;
   text-align: center;
+  text-decoration: none;
 }
-/* a{
+a{
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 60px;
+  text-decoration: none; */
+
+}
+
+.or-option{
+  text-align: center;
+  margin-bottom: inherit;
+}
+.login-form, .signup-form{
+  /* font-size: 1.3rem;
+  text-decoration: none;
+  padding: 6px 5px;
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  color: var(--primary);
+  border: none;
+  outline: none;
+  box-shadow: 3px 3px var(--dark);
+  transform: translate(-1px, -1px); */
+  display: grid;
+  justify-content: center;
+  text-align: -webkit-right;
+  height: 153px;
+}
+.nav-header{
+  color: #9caea9;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -40,21 +92,12 @@ h1 {
   list-style: none;
   margin-left: auto;
   margin-right: 60px;
-  color: #48ce26;
-
-} */
-
-.login-form, .signup-form{
-  display: grid;
-    justify-content: center;
-    text-align: -webkit-right;
-}
-.nav-header{
-  color: #9caea9;
+  text-decoration: none;
 }
 nav{
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
+  justify-content: revert;
+  margin-left: 20%;
 }
 .head {
   font-size: 3rem;
@@ -140,15 +183,15 @@ p {
 }
 
 /* CARDS */
-.new-post{
+/* .new-post{
   margin: 0 0 20px 0;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
-}
+} */
 .new-post-header{
   color: var(--primary);
   background-color: var(--dark);
-  margin: 0px 80% 0 0;
+  text-align: center;
 }
 
 .post-text, .post-title {
@@ -163,11 +206,10 @@ p {
 }
 
 /* FORM */
-.form-label,
-.form-input,
-.form-textarea {
+/* .form-label,
+.form-input {
   display: block;
-}
+} */
 
 .form-label {
   font-size: 1.1rem;

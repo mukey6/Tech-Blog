@@ -2,17 +2,18 @@
   <h2 class="new-post-header">Create New Blog</h2>
 
   <form class="new-post-form">
-    <div>
+    <div class="new-blog">
       <label for="post-title">Title</label>
       <input type="text" id="post-title" name="post-title" />
     </div>
-      <div>
+      <div class="new-blog">
     <label for="post-text">Blog</label>
     <textarea name="post-text-body"></textarea>
+    <button type="submit" class="create-btn btn">Create</button>
   </div>
-    <button type="submit" class="btn">Create</button>
   </form>
 </section>
+
 
 {{#if posts.length }}
 <section>

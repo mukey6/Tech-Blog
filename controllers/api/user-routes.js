@@ -46,14 +46,14 @@ router.post("/", (req, res) => {
     email: req.body.email,
     password: req.body.password,
   })
-    // .then((userData) => {
-    //   req.session.save(() => {
-    //     req.session.user_id = userData.id;
-    //     req.session.username = userData.username;
-    //     req.session.loggedIn = true;
-    //     res.json(userData);
-    //   });
-    // })
+    .then((userData) => {
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.loggedIn = true;
+        res.json(userData);
+      });
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

@@ -33,6 +33,3 @@ sequelize.sync({ alter: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
-
-// edit-post handlebars not working ?
-// delete post when user is deleted?
