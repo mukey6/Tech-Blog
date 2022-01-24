@@ -1,6 +1,3 @@
-// import { Model, DataTypes } from "sequelize";
-// import sequelize from "../config/connection";
-
 const {Model, DataTypes} = require('sequelize')
 const sequelize = require('../config/connection')
 
@@ -45,5 +42,4 @@ Comment.init(
   }
 );
 
-// export default Comment
 module.exports = Comment

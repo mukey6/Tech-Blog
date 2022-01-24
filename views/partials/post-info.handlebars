@@ -1,10 +1,11 @@
  <article class="post">
 
   <div class="title">
-    <a href="{{id}}" target="_blank">{{title}}</a>
+    {{!-- <a href="/post/{{id}}" target="_blank">{{title}}</a>
     <a href="{{title}}" target="_blank">{{title}}</a>
-    {{title}} 
-    {{log id}}
+    {{title}}  --}}
+    <a href="/post/{{id}}">{{title}}</a>
+
     Created by: {{user.username}} on {{format_date created_at}}
   </div>
   <div class="meta">

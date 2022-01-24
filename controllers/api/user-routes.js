@@ -43,7 +43,6 @@ router.get("//:id", (req, res) => {
 router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
-    email: req.body.email,
     password: req.body.password,
   })
     .then((userData) => {
@@ -104,12 +103,12 @@ router.delete("/:id", (req, res) => {
 router.post("/login", (req, res) => {
   User.findOne({
     where: {
-      email: req.body.email,
+      username: req.body.username,
     },
   }).then((userData) => {
     if (!userData) {
-      res.status(400).json({ message: "wrong email" });
-      return
+      res.status(400).json({ message: "wrong username" });
+      return;
     }
     const passwordCheck = userData.checkPassword(req.body.password);
     if (!passwordCheck) {
@@ -126,14 +125,13 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.post('/logout', (req, res)=>{
+router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  }
-  else {
+  } else {
     res.status(404).end();
   }
-})
+});
 module.exports = router;

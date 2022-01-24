@@ -1,7 +1,3 @@
-// import {Model, DataTypes} from 'sequelize'
-// import sequelize from '../config/connection'
-// import bcrypt from 'bcrypt'
-
 const {Model, DataTypes} = require('sequelize')
 const sequelize = require('../config/connection')
 const bcrypt = require('bcrypt')
@@ -24,14 +20,6 @@ User.init(
         username: {
             type: DataTypes.STRING,
             allowNull: false,
-          },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-              isEmail: true,
-            },
           },
           password: {
             type: DataTypes.STRING,
@@ -66,5 +54,4 @@ User.init(
 
 )
 
-// export default User
 module.exports = User
