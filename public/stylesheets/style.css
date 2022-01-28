@@ -58,10 +58,10 @@ h1 {
   margin-bottom: inherit;
 }
 .login-form, .signup-form{
-  display: grid;
-  justify-content: center;
-  text-align: -webkit-right;
-  height: 153px;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
 }
 .nav-header{
   color: #9caea9;
